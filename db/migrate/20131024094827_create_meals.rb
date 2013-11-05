@@ -3,6 +3,7 @@ class CreateMeals < ActiveRecord::Migration
     create_table :meals do |t|
       t.string :title
       t.integer :days
+      t.integer :number_ingrediants
       t.text :list_ingrediants
 
       t.timestamps 

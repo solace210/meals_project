@@ -6,7 +6,7 @@ class MealsController < ApplicationController
 	
 	def create
 	
-		@meal = Meal.new(params[:meal].permit(:title, :days, :list_ingrediants))
+		@meal = Meal.new(params[:meal].permit(:title, :days, :number_ingrediants, :list_ingrediants))
 	
 		if @meal.save
 		redirect_to @meal
@@ -39,7 +39,7 @@ class MealsController < ApplicationController
 	def update
 		@meal = Meal.find(params[:id])
 		
-		if @meal.update(params[:meal].permit(:title, :days, :list_ingrediants))
+		if @meal.update(params[:meal].permit(:title, :days, :number_ingrediants, :list_ingrediants))
 			redirect_to @meal
 		else
 			render 'edit'
@@ -51,7 +51,7 @@ class MealsController < ApplicationController
 	
 	private
 		def meal_params
-			params.require(:meal).permit(:title, :days, :list_ingrediants)
+			params.require(:meal).permit(:title, :days, :number_ingrediants, :list_ingrediants)
 	end
 	
 	
