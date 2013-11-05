@@ -1,0 +1,31 @@
+<%= form_for :meal, url: meals_path do |f| %>
+	<% if @meal.errors.any? %>
+	<div id="errorExplanation">
+		<h2><%= pluralize(@meal.errors.count, "error") %>
+		prohibited this meal being saved:</h2>
+		<ul>
+		<%@meal.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+	</div>
+	<% end %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title, :size => 50 %>
+	</p>
+	<p>
+		<%= f.label :days %><br>
+		<%= f.select :days, options_for_select((1..3).map{|d| ["#{d}", d]}) %><br>
+	<p>
+		<%= f.label :list_ingrediants %><br>
+		<%= f.text_area :list_ingrediants, :cols => 50, :rows => 25  %>
+	</p>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+		
+	
+	
+	<% end %>

@@ -1,0 +1,13 @@
+<%= form_for([@meal, @meal.comments.build]) do |f| %>
+	<p>
+	<%= f.label :body %><br />
+	<%= f.text_area :body %>
+	</p>
+	<p>
+	<%= f.label :rating %><br>
+	<%= f.select :rating, options_for_select((1..6).map{|d| ["#{d}", d]}) %><br>
+	</p>
+	<p>
+	<%= f.submit %>
+	</p>
+<% end%>
