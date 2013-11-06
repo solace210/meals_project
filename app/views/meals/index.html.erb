@@ -1,26 +1,40 @@
 <h1>Listing Meals</h1>
 <%= link_to 'New Meal Entry', new_meal_path %>
  
-<table>
+ <table>
   <tr>
-    <th>Title</th>
-    <th>Days</th>
-    <th>List of Ingrediants</th>
+    <th>&nbsp;&nbsp;Title</th>
+    <th>&nbsp;&nbsp;Days</th>
+    <th>&nbsp;&nbsp;Number of Ingrediants</th>
+    <th>&nbsp;&nbsp;List of Ingrediants</th>
+  
     
   </tr>
  
   <% @meals.each do |meal| %>
+  
+  	
     <tr>
-      <td><%= meal.title %></td>
-      <td><%= meal.days %></td>
-      <td><%= meal.list_ingrediants %></td>
+      <td>&nbsp;&nbsp;<%= meal.title %></td>
+      <td>&nbsp;&nbsp;<%= meal.days %></td>
+      <td>&nbsp;&nbsp;<%= meal.number_ingrediants %>
+      <td>&nbsp;&nbsp;<%= meal.list_ingrediants %>
+     	
+
       
-      <td><%= link_to 'Show', meal_path(meal) %></td>
+
+      
+
+      
+
+      
+    <td><%= link_to 'Show', meal_path(meal) %></td>
     <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
     <td><%= link_to 'Destroy', meal_path(meal),
                     method: :delete, data: { confirm: 'Are you sure?'}
-%></tr>
-    
-    </tr>
+%>
+
+  
+	
   <% end %>
 </table>

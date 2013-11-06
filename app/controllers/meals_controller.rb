@@ -23,6 +23,8 @@ class MealsController < ApplicationController
 	
 	def index
 		@meals = Meal.all
+		@comments = Comment.all
+		
 	end
 	
 	def edit
