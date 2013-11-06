@@ -10,16 +10,19 @@
   
     
   </tr>
- 
-  <% @meals.each do |meal| %>
   
-  	
+   <% @meals.each do |meal| %>
+  
+ 
     <tr>
-      <td>&nbsp;&nbsp;<%= meal.title %></td>
-      <td>&nbsp;&nbsp;<%= meal.days %></td>
+      <td>&nbsp;&nbsp;<%= meal.title %>
+      <td>&nbsp;&nbsp;<%= meal.days %>
       <td>&nbsp;&nbsp;<%= meal.number_ingrediants %>
       <td>&nbsp;&nbsp;<%= meal.list_ingrediants %>
-     	
+      <td> <%= render meal.comments %>
+  
+      		
+  	
 
       
 
