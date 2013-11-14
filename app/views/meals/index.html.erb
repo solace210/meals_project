@@ -9,8 +9,7 @@
       <a class="brand" href="#">Meals Database</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to t('.new', :default => t("helpers.links.new")),
-            new_meal_path %></li>
+          <li><%= link_to "New Meal Entry", new_meal_path %></li>
           <li><%= link_to "Test2" %></li>
           <li><%= link_to "Test3" %></li>
           <li><%= link_to "Test4" %></li>
@@ -35,7 +34,6 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:days) %></th>
       <th><%= model_class.human_attribute_name(:list_ingrediants) %></th>
-      <th><%= model_class.human_attribute_name(:number_ingrediants) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -47,7 +45,6 @@
         <td><%= meal.title %></td>
         <td><%= meal.days %></td>
         <td><%= meal.list_ingrediants %></td>
-        <td><%= meal.number_ingrediants %></td>
         <td><%=l meal.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
