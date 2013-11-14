@@ -1,35 +1,32 @@
-<%= form_for :meal, url: meals_path do |f| %>
-	<% if @meal.errors.any? %>
-	<div id="errorExplanation">
-		<h2><%= pluralize(@meal.errors.count, "error") %>
-		prohibited this meal being saved:</h2>
-		<ul>
-		<%@meal.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-	<% end %>
-	</ul>
-	</div>
-	<% end %>
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title, :size => 50 %>
-	</p>
-	<p>
-		<%= f.label :days %><br>
-		<%= f.select :days, options_for_select((1..3).map{|d| ["#{d}", d]}) %><br>
-	<p>
-		<%= f.label :number_ingrediants %><br>
-		<%= f.select :number_ingrediants, options_for_select((1..10).map{|d| ["#{d}", d]}) %><br>
-	</p>
-	<p>
-		<%= f.label :list_ingrediants %><br>
-		<%= f.text_area :list_ingrediants, :cols => 50, :rows => 25  %>
-	</p>
-	
-	<p>
-		<%= f.submit %>
-	</p>
-		
-	
-	
-	<% end %>
+<%= form_for @meal, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :days, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :days, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :list_ingrediants, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :list_ingrediants, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :number_ingrediants, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :number_ingrediants, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                meals_path, :class => 'btn' %>
+  </div>
+<% end %>
