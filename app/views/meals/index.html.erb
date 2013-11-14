@@ -9,7 +9,7 @@
 		<a class="brand" href="#">Meals Database</a>
 		<div class="nav-collapse">
 			<ul class="nav">
-				<li><%= link_to "test 1"%></li>
+				<li><%= link_to 'New Meal Entry', new_meal_path%></li>
 				<li><%= link_to "test 1"%></li>
 				<li><%= link_to "test 1"%></li>
 				<li><%= link_to "test 1"%></li>
@@ -20,7 +20,7 @@
 </div>
 
 <h1>Meals</h1>
-<%= link_to 'New Meal Entry', new_meal_path %>
+<%=  %>
  
  
  
@@ -44,16 +44,9 @@
       <td>&nbsp;&nbsp;<%= meal.list_ingrediants %>
       <td> <%= render meal.comments %>
   
-      		
-  	
-
-      
-
-      
-
-      
-
-      
+    
+    
+    
     <td><%= link_to 'Show', meal_path(meal) %></td>
     <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
     <td><%= link_to 'Destroy', meal_path(meal),
