@@ -2,13 +2,22 @@
 <html>
 <head>
   <title>MealsProject</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+	<div class="row">
+		<div class="span9"><%= yield %></div>
+		<div class="span3">
+			<h2> About </h2>
+			<p> Meals Database has been put together as a learning project and is very much work in progress. </p>
+		</div>
+	</div>
+</div>
 
-<%= yield %>
+
 
 </body>
 </html>
