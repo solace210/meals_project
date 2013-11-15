@@ -14,6 +14,17 @@
   <dd><%= @meal.number_ingrediants %></dd>
 </dl>
 
+<%- model_class = Comment -%>
+<dl class="dl-horizontal">
+	<dt><strong><%= model_class.human_attribute_name("comments") %>:</strong></dt>
+	<br>
+	<%= render @meal.comments %>
+	<%= render :partial => 'comments/form' %>
+</dl>
+
+
+
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               meals_path, :class => 'btn'  %>
