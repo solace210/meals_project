@@ -10,9 +10,7 @@
       <div class="nav-collapse">
         <ul class="nav">
           <li><%= link_to "New Meal Entry", new_meal_path %></li>
-          <li><%= link_to "Test2" %></li>
-          <li><%= link_to "Test3" %></li>
-          <li><%= link_to "Test4" %></li>
+          
         </ul>
       </div>
     </div>
@@ -44,16 +42,26 @@
         <td><%= link_to meal.title, meal_path(meal) %></td>
         <td><%= meal.days %></td>
         <td><%= meal.list_ingrediants %></td>
-        <td><%= render meal.comments %></td>
+        <td>
+          <table>
+            <% meal.comments.each do |comment| %>
+              <tr> 
+                <td><%= comment.body %></td>
+                <td><%= comment.rating %></td>
+              </tr>
+            <% end %>
+          </table>
+        </td>
         <td><%= meal.created_at.strftime("%d %b. %Y") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_meal_path(meal), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        	<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       meal_path(meal),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+         
           <%= link_to t('.add', :default => t("helpers.links.add")),
           				meal_path(meal), :class => 'btn btn-mini' %>
         </td>
