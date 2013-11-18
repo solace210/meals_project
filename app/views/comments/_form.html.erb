@@ -1,17 +1,17 @@
 <%= form_for ([@meal, @meal.comments.build]), :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :rating, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :rating, :class => 'text_field' %>
-    </div>
-  </div>
+  
   <div class="control-group">
     <%= f.label :body, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :body, :class => 'text_field' %>
     </div>
   </div>
-  
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rating, :class => 'text_field' %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
